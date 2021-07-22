@@ -11,6 +11,7 @@ import subprocess
 import time
 from functools import partial
 from pathlib import Path
+import math
 
 import pyrogram.types as pyrogram
 import requests
@@ -49,6 +50,14 @@ def getFolderSize(p):
             for f in map(prepend, os.listdir(p))
         ]
     )
+
+
+def humanizeFileSize(filesize):
+    filesize = abs(filesize)
+    if (filesize==0):
+        return "0 Bytes"
+    p = int(math.floor(math.log(filesize, 2)/10))
+    return "%0.2f %s" % (filesize/math.pow(1024,p), ['Bytes','KB','MB','GB','TB','PB','EB','ZB','YB'][p])
 
 
 async def upload_to_tg(
@@ -200,7 +209,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         LOGGER.info(tam.decode())
         # os.remove("filter.txt")
         gauti = f"https://drive.google.com/file/d/{gautam}/view?usp=drivesdk"
-        gjay = size(os.path.getsize(file_upload))
+        gjay = humanizeFileSize(os.path.getsize(file_upload))
         button = []
         button.append(
             [pyrogram.InlineKeyboardButton(
@@ -267,7 +276,7 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         LOGGER.info(tam.decode("utf-8"))
         # os.remove("filter1.txt")
         gautii = f"https://drive.google.com/folderview?id={gautam}"
-        gjay = size(getFolderSize(file_upload))
+        gjay = humanizeFileSize(getFolderSize(file_upload))
         LOGGER.info(gjay)
         button = []
         button.append(
