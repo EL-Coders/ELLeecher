@@ -1,5 +1,5 @@
-# for support join here [TorrentLeech-Gdrive](https://telegram.dog/GBotStore) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fgautamajay52%2FTorrentLeech-Gdrive&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://github.com/gautamajay52/TorrentLeech-Gdrive)
-# working example group [Leech Here](https://telegram.dog/GBotStore)
+# for support join here [TorrentLeech-Gdrive](https://telegram.dog/ELSupport)
+# working example group [Leech Here](https://telegram.dog/ELLeechGroup)
 
 # Telegram Torrent Leecher 🔥🤖
 
@@ -50,13 +50,13 @@ f)Then tap 👇👇
 
  Heroku is not supported now 😕 #Dead
 
-Better buy a vps 😐 and follow [this](https://github.com/gautamajay52/TorrentLeech-Gdrive#process-to-run-this-bot-on-vps)
+Better buy a vps 😐 and follow [this](https://github.com/EL-Coders/ELLeecher#process-to-run-this-bot-on-vps)
 
 ## Process to run this BOT on VPS
 
 - Clone this repo:
 ```
-git clone https://github.com/gautamajay52/TorrentLeech-Gdrive torrentleech-gdrive
+git clone https://github.com/EL-Coders/ELLeecher torrentleech-gdrive
 cd torrentleech-gdrive
 ```
 
@@ -75,7 +75,7 @@ After this step you will see a new file named ```config.env``` in root directory
 
 Fill those compulsory variables.
 
-If you need more explanation about any variable then read [app.jso](https://github.com/gautamajay52/TorrentLeech-Gdrive/blob/master/app.jso)
+If you need more explanation about any variable then read [app.jso](https://github.com/EL-Coders/ELLeecher/blob/master/app.jso)
 
 ##### Set Rclone
 
@@ -114,7 +114,7 @@ Follow this [Video Tutorial](https://youtu.be/J3tMbngA9DE)
 Simply clone the repository and run the main file:
 
 ```sh
-git clone https://github.com/gautamajay52/TorrentLeech-Gdrive
+git clone https://github.com/EL-Coders/ELLeecher
 cd TorrentLeech-Gdrive
 python3 -m venv venv
 . ./venv/bin/activate
@@ -130,7 +130,7 @@ python3 -m tobrot
 
 * `APP_ID`
 * `API_HASH`: Get these two values from [my.telegram.org/apps](https://my.telegram.org/apps).
-  * N.B.: if Telegram is blocked by your ISP, try our [Telegram bot](https://telegram.dog/UseTGXBot) to get the IDs.
+  * N.B.: if Telegram is blocked by your ISP, try our [Telegram bot](https://telegram.dog/UsePlusBot) to get the IDs.
 
 * `AUTH_CHANNEL`: Create a Super Group in Telegram, add `@GoogleIMGBot` to the group, and send /id in the chat, to get this value.
 
@@ -262,7 +262,7 @@ the file will be uploaded as `new.txt`.
 
 
 ## Credits, and Thanks to
-* [GautamKumar(me)](https://github.com/gautamajay52/TorrentLeech-Gdrive) 😬
+* [GautamKumar](https://github.com/gautamajay52/TorrentLeech-Gdrive) 😬
 * [SpEcHiDe](https://github.com/SpEcHiDe/PublicLeech) for his wonderful code😚
 * [Rclone Team](https://rclone.org) for theirs awesome tool☁️
 * [Dan Tès](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)

@@ -211,10 +211,6 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gauti = f"https://drive.google.com/file/d/{gautam}/view?usp=drivesdk"
         gjay = humanizeFileSize(os.path.getsize(file_upload))
         button = []
-        button.append(
-            [pyrogram.InlineKeyboardButton(
-                text="☁️ CloudUrl ☁️", url=f"{gauti}")]
-        )
         if INDEX_LINK:
             indexurl = f"{INDEX_LINK}/{os.path.basename(file_upload)}"
             tam_link = requests.utils.requote_uri(indexurl)
@@ -222,13 +218,19 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
             button.append(
                 [
                     pyrogram.InlineKeyboardButton(
-                        text="ℹ️ IndexUrl ℹ️", url=f"{tam_link}"
-                    )
+                        text="🔗 Direct Link", url=f"{tam_link}"
+                    ), pyrogram.InlineKeyboardButton(
+                        text="☁️ GDrive Link", url=f"{gauti}")
                 ]
+            )
+        else:
+            button.append(
+                [pyrogram.InlineKeyboardButton(
+                    text="☁️ GDrive Link", url=f"{gauti}")]
             )
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await messa_ge.reply_text(
-            f"🤖: Uploaded successfully `{os.path.basename(file_upload)}` <a href='tg://user?id={g_id}'>🤒</a>\n📀 Size: {gjay}",
+            f"⏏️ <b>Uploaded Successfully</b> \n<b>▪️ Name: </b>`{os.path.basename(file_upload)}` <a href='tg://user?id={g_id}'></a>\n▪️ <b>Size:</b> `{gjay}`",
             reply_markup=button_markup,
         )
         os.remove(file_upload)
@@ -279,24 +281,26 @@ async def upload_to_gdrive(file_upload, message, messa_ge, g_id):
         gjay = humanizeFileSize(getFolderSize(file_upload))
         LOGGER.info(gjay)
         button = []
-        button.append(
-            [pyrogram.InlineKeyboardButton(
-                text="☁️ CloudUrl ☁️", url=f"{gautii}")]
-        )
         if INDEX_LINK:
-            indexurl = f"{INDEX_LINK}/{os.path.basename(file_upload)}/"
+            indexurl = f"{INDEX_LINK}/{os.path.basename(file_upload)}"
             tam_link = requests.utils.requote_uri(indexurl)
             LOGGER.info(tam_link)
             button.append(
                 [
                     pyrogram.InlineKeyboardButton(
-                        text="ℹ️ IndexUrl ℹ️", url=f"{tam_link}"
-                    )
+                        text="🔗 Direct Link", url=f"{tam_link}"
+                    ), pyrogram.InlineKeyboardButton(
+                        text="☁️ GDrive Link", url=f"{gautii}")
                 ]
+            )
+        else:
+            button.append(
+                [pyrogram.InlineKeyboardButton(
+                    text="☁️ GDrive Link", url=f"{gautii}")]
             )
         button_markup = pyrogram.InlineKeyboardMarkup(button)
         await messa_ge.reply_text(
-            f"🤖: Uploaded successfully `{os.path.basename(file_upload)}` <a href='tg://user?id={g_id}'>🤒</a>\n📀 Size: {gjay}",
+            f"⏏️ <b>Uploaded Successfully</b> \n<b>▪️ Name: </b>`{os.path.basename(file_upload)}` <a href='tg://user?id={g_id}'></a>\n▪️ <b>Size:</b> `{gjay}`",
             reply_markup=button_markup,
         )
         shutil.rmtree(file_upload)

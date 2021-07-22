@@ -25,6 +25,6 @@ async def help_message_f(client, message):
     # display the /help
 
     await message.reply_text(
-        """join this group for help-- @GbotStoreSupport\n\n And also don't forget to star/fork this repo: <a href="https://github.com/gautamajay52/TorrentLeech-Gdrive">TorrentLeech-Gdrive</a>""",
+        """Hi, join this group for help: @ELSupport & for updates, join @ELUpdates \n\nAlso, you can find the source code here: <a href="https://github.com/EL-Coders/ELLeecher">EL Leecher</a>""",
         disable_web_page_preview=True,
     )

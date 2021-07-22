@@ -35,7 +35,7 @@ async def status_message_f(client, message):  # weird code but 'This is the way'
             gid_dict[chat_id].pop()
             gid_dict[chat_id].append(mess_id)
 
-    prev_mess = "By gautamajay52"
+    prev_mess = "By @ELUpdates"
     while True:
         downloads = aria_i_p.get_downloads()
         msg = ""
@@ -48,13 +48,13 @@ async def status_message_f(client, message):  # weird code but 'This is the way'
             if file.status == "active":
                 is_file = file.seeder
                 if is_file is None:
-                    msgg = f"<b>Conn:</b> {file.connections}"
+                    msgg = f"<b>Conn:</b> `{file.connections}`"
                 else:
-                    msgg = f"<b>Peers:</b> {file.connections} | <b>Seeders:</b> {file.num_seeders}"
+                    msgg = f"<b>Peers:</b> `{file.connections}`` | <b>Seeders:</b> `{file.num_seeders}`"
                 msg += f"\n<b>{downloading_dir_name}</b>"
-                msg += f"\n<b>Speed</b>: {file.download_speed_string()}"
-                msg += f"\n<b>Status</b>: {file.progress_string()} <b>of</b> {file.total_length_string()}"
-                msg += f"\n<b>ETA:</b> {file.eta_string()}"
+                msg += f"\n<b>Speed</b>: `{file.download_speed_string()}`"
+                msg += f"\n<b>Status</b>: `{file.progress_string()}` <b>of</b> `{file.total_length_string()}`"
+                msg += f"\n<b>ETA:</b> `{file.eta_string()}`"
                 msg += f"\n{msgg}"
                 msg += f"\n<b>To Cancel:</b> <code>/cancel {file.gid}</code>"
                 msg += "\n"
