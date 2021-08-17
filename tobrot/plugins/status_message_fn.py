@@ -48,13 +48,13 @@ async def status_message_f(client, message):  # weird code but 'This is the way'
             if file.status == "active":
                 is_file = file.seeder
                 if is_file is None:
-                    msgg = f"<b>Conn:</b> `{file.connections}`"
+                    msgg = f"<b>Conn:</b> <code>{file.connections}</code>"
                 else:
-                    msgg = f"<b>Peers:</b> `{file.connections}`` | <b>Seeders:</b> `{file.num_seeders}`"
+                    msgg = f"<b>Peers:</b> <code>{file.connections}</code> | <b>Seeders:</b> <code>{file.num_seeders}</code>"
                 msg += f"\n<b>{downloading_dir_name}</b>"
-                msg += f"\n<b>Speed</b>: `{file.download_speed_string()}`"
-                msg += f"\n<b>Status</b>: `{file.progress_string()}` <b>of</b> `{file.total_length_string()}`"
-                msg += f"\n<b>ETA:</b> `{file.eta_string()}`"
+                msg += f"\n<b>Speed</b>: <code>{file.download_speed_string()}</code>"
+                msg += f"\n<b>Status</b>: <code>{file.progress_string()}</code> <b>of</b> <code>{file.total_length_string()}</code>"
+                msg += f"\n<b>ETA:</b> <code>{file.eta_string()}</code>"
                 msg += f"\n{msgg}"
                 msg += f"\n<b>To Cancel:</b> <code>/cancel {file.gid}</code>"
                 msg += "\n"
